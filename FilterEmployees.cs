@@ -5,7 +5,6 @@ using System.Text.Json;
 
 public class FilterEmployeesSolution
 {
-    // İstenen imza
     public static string FilterEmployees(IEnumerable<(string Name, int Age, string Department, decimal Salary, DateTime HireDate)> employees)
     {
         if (employees == null)
@@ -21,7 +20,7 @@ public class FilterEmployeesSolution
             });
         }
 
-        var minHireInclusive = new DateTime(2017, 12, 31); // örnek 5 ile uyumlu sınır
+        var minHireInclusive = new DateTime(2017, 12, 31);
 
         var filtered = employees
             .Where(e =>
@@ -33,7 +32,6 @@ public class FilterEmployeesSolution
             )
             .ToList();
 
-        // İsimleri: uzunluklarına göre azalan, ardından alfabetik (A->Z)
         var orderedNames = filtered
             .Select(e => e.Name ?? string.Empty)
             .OrderByDescending(n => n.Length)
@@ -57,3 +55,4 @@ public class FilterEmployeesSolution
         });
     }
 }
+
