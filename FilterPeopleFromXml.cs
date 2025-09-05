@@ -5,7 +5,6 @@ using System.Text.Json;
 
 public class FilterPeopleFromXmlSolution
 {
-    // İstenen imza
     public static string FilterPeopleFromXml(string xmlData)
     {
         if (string.IsNullOrWhiteSpace(xmlData))
@@ -57,3 +56,4 @@ public class FilterPeopleFromXmlSolution
         });
     }
 }
+
